@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Account Form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <form id="accountForm">
+        <label for="identifiant">Identifiant:</label><br>
+        <input type="text" id="identifiant" name="identifiant" value="jhon"><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" value="password1234"><br>
+        <label for="role">Role:</label><br>
+        <input type="number" id="role" name="role" value="1"><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+    $(document).ready(function(){
+        $('#accountForm').on('submit', function(e) {
+            e.preventDefault();
+            var formData = {
+                'identifiant': $('input[name=identifiant]').val(),
+                'password': $('input[name=password]').val(),
+                'role': parseInt($('input[name=role]').val()),
+            };
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost:8080/account',
+                data: JSON.stringify(formData),
+                contentType: "application/json",
+                dataType: 'json',
+                success: function(data){
+                    console.log(data);
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    console.log(xhr.status);
+                    console.log(thrownError);
+                }
+            });
+        });
+    });
+    </script>
+</body>
+</html>
+

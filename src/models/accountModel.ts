@@ -27,8 +27,7 @@ export const getUserBySessionToken = (sessionToken: string) => AccountModel.find
 export const createAccount = (account: any) => {
   const newAccount = new AccountModel(account);
   return newAccount.save();
-}
-
+};
 
 // export const createAccount2 = (values: Record<string, any>) => new AccountModel(values).save().then((user) => user.toObject());
 export const deleteAccountById = (id: string) => AccountModel.findByIdAndDelete(id);

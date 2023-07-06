@@ -6,6 +6,7 @@ import cors from 'cors';
 import compression from 'compression';
 import coolieParser from 'cookie-parser';
 import mongoose from 'mongoose';
+import accountRoutes from './routes/accountRoutes';
 
 dotenv.config();
 
@@ -27,6 +28,9 @@ const server = http.createServer(app);
 app.get('/', (req: Request, res: Response) => {
   res.send('Express + TypeScript Server');
 });
+
+app.use(accountRoutes);
+
 
 server.listen(port, () => {
   console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
