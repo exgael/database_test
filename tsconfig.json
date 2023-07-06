@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+      "forceConsistentCasingInFileNames": true, // case sensitive
+      "esModuleInterop": true, // es module interop
+      "strict": true, // strict mode
+      "lib": ["es5", "es6", "dom"], // libraries 
+      "module": "commonjs",
+      "moduleResolution": "Node", // module resolution
+      "target": "es5", // target
+      "sourceMap": true, // source map
+      "outDir": "dist", // output directory
+      "emitDecoratorMetadata": true, // decorators
+      "experimentalDecorators": true, // decorators
+      "noImplicitAny": true // enforce explicit types
+    },
+    "include": ["src/**/*",  "src/custom.d.ts"],
+  }
