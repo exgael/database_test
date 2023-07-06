@@ -7,10 +7,10 @@ const accountSchema = new Schema({
     unique: true,
     required: true
   },
-  authentication: {
-    password: { type: String, required: true, select: false },
-    salt: { type: String, select: false },
-    sessionToken: { type: String, select: false },
+  password: { 
+    type: String, 
+    required: true, 
+    select: false 
   },
   role: {
     type: Number,
